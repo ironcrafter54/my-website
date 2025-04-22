@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+    overflow: hidden;
+    background-color: #1c1e1f;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 4em 1fr;
+    gap: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.header {
+    border: 1px solid lightgrey;
+}
+
+.sidebar {
+    overflow: visible;
+    margin-top: 1em;
+}
+.sidebar-text {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #e9eef6;
+    width: 100%;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    writing-mode: vertical-rl;
+    overflow: visible;
+    margin: 0;
+    font-size: 4.2em;
+    transform: translateX(-0.05em);
+    margin-top: 0.1em;
+}
+
+.footer {
+    border-top: 1em solid lightgrey;
+}
+
+.body {
+    display: grid;
+    overflow: hidden;
+}
+
+p {
+    max-width: 600px;
+}
+
+.pfp {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    overflow: visible;
+}
+
+.social-img {
+    width: 100%;
+    margin-top: 0.3em;
+    transition: 0.3s;
+    scale: 0.8;
+}
+
+.social-img:hover {
+    filter: drop-shadow(0 0 0.75rem currentColor);
+    scale: 0.85;
+}
+
+.photos {
+    display: grid;
+    grid-template-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    overflow: scroll;
+    font-size: 1.4em;
+    letter-spacing: 0.6em;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    column-gap: 1em;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.image-title {
+    display: block;
+    color: #e9eef6;
+    margin-top: 0;
+    margin-bottom: 1em;
+    letter-spacing: 0.2em;
+    transition: 0.75s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    text-decoration: underline rgba(255, 255, 255, 0);
+    text-underline-offset: 0.5em;
+}
+
+.image-container {
+    border-radius: 0.2em; /* use this to change the radius of the image containers */
+    width: 100%;
+    height: auto; /* Use auto for height if aspect ratio matters */
+    aspect-ratio: 16 / 9; /* Enforces consistent aspect ratio */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Ensures child img respects container size */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Prevents gaps from inline images */
+    transition: 0.75s;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.anchor:hover .image-container img {
+    transform: scale(1.01);
+}
+
+.anchor:hover .image-title {
+    letter-spacing: 0 0.25em;
+    text-underline-offset: 0.2em;
+    text-decoration: underline rgb(255, 255, 255);
+}
+
+.mobile-header {
+    grid-column: 1 / -1;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #e9eef6;
+    width: 100%;
+    justify-content: top;
+    align-items: center;
+    writing-mode: horizontal-tb;
+    overflow: visible;
+    margin: 0;
+    font-size: 2em;
+    margin-top: 0 -0.13em;
+    margin-bottom: 0.1em;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto 3fr 1fr;
+    letter-spacing: 0.2em;
+    display: none;
+}
+.page-title{
+    grid-column: 1 / -1;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #e9eef6;
+    justify-content: top;
+    font-size: 2em;
+}
+.page-title hr{
+    color: #e9eef6;
+    height: .02em;
+    border-radius: .05em;
+    background-color: #e9eef6;
+    margin-top: 0em;
+    margin-bottom: .3em;
+}
+.page-title p {
+    margin: 0;
+    margin-bottom: .15em;
+}
+
+.mobile-header-socials {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.mobile-social-img {
+    width: 1em;
+    display: block;
+    margin: auto;
+    scale: 0.7;
+    transition: 0.25s;
+}
+
+.mobile-social-img:hover {
+    filter: drop-shadow(0 0 0.75rem currentColor);
+    scale: 0.75;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .container {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        margin-top: 0 1em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    .mobile-header {
+        font-size: 7vw;
+        display: grid;
+    }
+    .test {
+        display: none;
+    }
+    .photos {
+        grid-template-columns: 1fr;
+    }
+}
